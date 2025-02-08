@@ -1,6 +1,6 @@
 # Instructions
 
-Please add database name, database username, database password into env file
+Please add database name, database username, database password into .env file
 
 # CLI Commands
 
