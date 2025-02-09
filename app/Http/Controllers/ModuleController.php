@@ -56,7 +56,7 @@ class ModuleController extends Controller
         }
     }
 
-    // Show a specific module with its details and histories
+    // *** Show a specific module with its details and histories
     public function show($id)
     {
         $module = Module::with(['details', 'histories'])->findOrFail($id);
@@ -90,7 +90,7 @@ class ModuleController extends Controller
         }
     }
 
-    // Delete a module and its associated details and histories
+    // *** Delete a module and its associated details and histories
     public function destroy($id)
     {
         try {
@@ -120,14 +120,14 @@ class ModuleController extends Controller
         }
     }
 
-    public function autoStatus(Request $request)
+    public function sinleModuleStatus(Request $request, $id)
     {
         try {
-            $modules = Module::with(['histories' => function ($query) {
+            $modules = Module::where('id', $id)->with(['histories' => function ($query) {
                 $query->latest()->limit(5);
             }])->get();
 
-            return view('frontend.pages.modules.render.render-status')->with(
+            return view('frontend.pages.modules.single-status.status')->with(
                 ['modules' => $modules]
             );
         } catch (\Throwable $th) {

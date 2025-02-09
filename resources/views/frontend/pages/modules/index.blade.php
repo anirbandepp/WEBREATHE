@@ -37,10 +37,15 @@
                                 <button class="btn btn-danger btn-sm"
                                     onclick="return confirm('Are you sure?')">Delete</button>
                             </form>
-                            <a href="{{ route('module_details.index', $module->id) }}"
-                                class="btn btn-info btn-sm">Details</a>
-                            <a href="{{ route('module_histories.index', $module->id) }}"
-                                class="btn btn-secondary btn-sm">History</a>
+                            <a href="{{ route('module_details.index', $module->id) }}" class="btn btn-info btn-sm">
+                                Details
+                            </a>
+                            <a href="{{ route('module_histories.index', $module->id) }}" class="btn btn-secondary btn-sm">
+                                History
+                            </a>
+                            <a href="{{ route('modules.sinleStatus', $module->id) }}" class="btn btn-dark btn-sm">
+                                Status
+                            </a>
                         </td>
                     </tr>
                 @endforeach

@@ -19,4 +19,4 @@ Route::get('modules/{module}/details', [ModuleDetailController::class, 'index'])
 Route::get('modules/{module}/histories', [ModuleHistoryController::class, 'index'])->name('module_histories.index');
 
 Route::get('/modules/status', [ModuleController::class, 'status'])->name('modules.status');
-Route::get('/modules/auto-status', [ModuleController::class, 'autoStatus'])->name('modules.autoStatus');
+Route::get('/modules/status/{id}', [ModuleController::class, 'sinleModuleStatus'])->name('modules.sinleStatus');
