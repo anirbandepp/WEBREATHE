@@ -6,6 +6,7 @@
 
     <section class="container">
         <h2>Module Details</h2>
+
         <table class="table table-bordered">
             <thead>
                 <tr>

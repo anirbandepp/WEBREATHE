@@ -5,7 +5,13 @@
 @section('content')
 
     <section class="container">
-        <h2>Edit Module</h2>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+
+            <h2>Edit Module</h2>
+
+            <a href="{{ route('modules.index') }}" class="btn btn-primary">Go Back</a>
+        </div>
 
         <form action="{{ route('modules.update', $module->id) }}" method="POST">
             @csrf

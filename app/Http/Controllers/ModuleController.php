@@ -7,14 +7,13 @@ use App\Models\Module;
 use App\Models\ModuleDetail;
 use App\Models\ModuleHistory;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 
 class ModuleController extends Controller
 {
     public function index(Request $request)
     {
         try {
-            $modules = Module::with(['details', 'histories'])->orderBy('id', 'desc')->get();
+            $modules = Module::with(['details', 'histories'])->orderBy('id', 'desc')->paginate();
             return view('frontend.pages.modules.index')->with(['modules' => $modules]);
         } catch (\Throwable $th) {
             throw $th;

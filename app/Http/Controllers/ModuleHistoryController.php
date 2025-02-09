@@ -12,7 +12,7 @@ class ModuleHistoryController extends Controller
     // Fetch histories for a specific module
     public function index($moduleId)
     {
-        $histories = ModuleHistory::where('module_id', $moduleId)->orderBy('id', 'desc')->paginate();
+        $histories = ModuleHistory::where('module_id', $moduleId)->orderBy('id', 'desc')->paginate(25);
 
         return view('frontend.pages.module_histories.index')->with(['histories' => $histories]);
     }

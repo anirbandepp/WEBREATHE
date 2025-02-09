@@ -5,7 +5,15 @@
 @section('content')
 
     <section class="container">
-        <h2>Register a New Module</h2>
+
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+
+            <h2>Register a New Module</h2>
+
+            <a href="{{ route('modules.index') }}" class="btn btn-primary">Go Back</a>
+        </div>
+
         <form action="{{ route('modules.store') }}" method="POST">
             @csrf
             <div class="mb-3">

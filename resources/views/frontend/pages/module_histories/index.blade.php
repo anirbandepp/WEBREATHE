@@ -6,7 +6,13 @@
 
     <section class="container">
 
-        <h2>Module Histories</h2>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+
+            <h2>Module Histories</h2>
+
+            <a href="{{ route('modules.index') }}" class="btn btn-primary">Go Back</a>
+        </div>
+
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -30,7 +36,8 @@
             </tbody>
         </table>
 
-        {{ $histories->links() }}
+
+        {!! $histories->withQueryString()->links('pagination::bootstrap-5') !!}
 
         <a href="{{ route('modules.index') }}" class="btn btn-secondary">Back</a>
 

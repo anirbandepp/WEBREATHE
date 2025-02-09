@@ -51,6 +51,8 @@
                 @endforeach
             </tbody>
         </table>
+
+        {!! $modules->withQueryString()->links('pagination::bootstrap-5') !!}
     </section>
 
 @endsection
